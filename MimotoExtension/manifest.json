@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Mimoto",
+    "version": "0.0.1",
+    "description": "Stellar - Simplified",
+    "background": {
+        "serviceworker": ["background.js"]
+    },
+    "permissions": ["contextMenus", "tabs", "storage", "activeTab"],
+    "content_scripts": [
+        {
+        "matches": [
+            "https://*.twitter.com/*", 
+            "https://x.com/*"
+        ],
+        "js": ["content.js"],
+        "all_frames": true
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "images/icon16bw.png"
+    },
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png",
+        "148": "images/icon148.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["images/*"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
+  
